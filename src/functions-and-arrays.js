@@ -8,7 +8,7 @@ function maxOfTwoNumbers(num1, num2) {
 
 
 // Iteration #2: Find longest word
-const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
+const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchardss', 'crackpot'];
 
 function findLongestWord(str) {
   let longestWord = []
@@ -16,9 +16,19 @@ function findLongestWord(str) {
     return null
   }else if (str.length === 1) {
     return str[0]
-  } 
+  } for (let i = 0; i < str.length - 1; i++) {
+    if (str[i].length > str[i + 1].length) {
+      longestWord.push(str[i])
+    } if (longestWord.length > 1) {
+      longestWord = longestWord[0]
+    }
+
+  }
+  
+  return longestWord
 }
 
+console.log(findLongestWord(words))
 
 
 // Iteration #3: Calculate the sum
@@ -56,10 +66,22 @@ function averageNumbers(avg) {
 // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
 
-function averageWordLength() { }
+function averageWordLength(strAvg) { 
+  let avgStr = []
+  for (let i = 0; i < strAvg.length; i++) {
+    avgStr.push(strAvg[i].length)
+
+  }
+  return averageNumbers(avgStr)
+  
+
+}
 
 // Bonus - Iteration #4.1
-function avg() {}
+function avg() {
+  
+  
+}
 
 // Iteration #5: Unique arrays
 const wordsUnique = [
@@ -76,14 +98,33 @@ const wordsUnique = [
   'bring'
 ];
 
-function uniquifyArray() {}
+function uniquifyArray(repeatedArr) {
+  let cleanArr = []
+  if (repeatedArr.length === 0) {
+    return null
+  }
+  for (let i = 0; i < repeatedArr.length; i++) {
+    if (repeatedArr.includes(repeatedArr[i]) === true) {
+      cleanArr.push(repeatedArr[i])
+      
+    }
+  }
+  console.log(cleanArr)
+  return cleanArr
+}
 
 
 
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
 
-function doesWordExist() {}
+function doesWordExist(arrList, itemToSearch) { 
+  if (arrList.length === 0 || itemToSearch.length === 0){
+    return null
+  }
+  
+  return arrList.includes(itemToSearch)
+}
 
 
 
@@ -102,7 +143,18 @@ const wordsCount = [
   'matter'
 ];
 
-function howManyTimes() {}
+function howManyTimes(arrOfWords, wordToSearch) {
+  let count = 0
+  if (arrOfWords.length === 0|| arrOfWords.includes(wordToSearch) === false) {
+    return 0
+  }   for (let i = 0; i < arrOfWords.length; i++) {
+    if (arrOfWords[i] === wordToSearch) {
+      count++
+    }
+  }
+  return count
+  }
+
 
 
 
