@@ -8,26 +8,25 @@ function maxOfTwoNumbers(num1, num2) {
 
 
 // Iteration #2: Find longest word
-const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchardss', 'crackpot'];
+const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
 
-function findLongestWord(str) {
-  let longestWord = []
-  if (str.length === 0) {
+function findLongestWord(strArr) {
+  if (strArr.length === 0) {
     return null
-  }else if (str.length === 1) {
-    return str[0]
-  } for (let i = 0; i < str.length - 1; i++) {
-    if (str[i].length > str[i + 1].length) {
-      longestWord.push(str[i])
-    } if (longestWord.length > 1) {
-      longestWord = longestWord[0]
-    }
+  }else if (strArr.length === 1) {
+    return strArr[0]
+  }  
+  let longString = ""
+  for (let i = 0; i < strArr.length; i++) {
+    if (strArr[i].length > longString.length) {
+      longString = strArr[i]
+      console.log(strArr)
 
+    }  
   }
-  
-  return longestWord
+  console.log(longString)
+  return longString
 }
-
 console.log(findLongestWord(words))
 
 
@@ -104,14 +103,14 @@ function uniquifyArray(repeatedArr) {
     return null
   }
   for (let i = 0; i < repeatedArr.length; i++) {
-    if (repeatedArr.includes(repeatedArr[i]) === true) {
+    if ( cleanArr.includes(repeatedArr[i]) === false) {
       cleanArr.push(repeatedArr[i])
-      
     }
   }
   console.log(cleanArr)
   return cleanArr
 }
+console.log(uniquifyArray(wordsUnique))
 
 
 
