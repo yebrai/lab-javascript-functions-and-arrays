@@ -44,10 +44,22 @@ function sumNumbers(arrayNum) {
 } 
 
 
+const mixedArr = [6, 12, 'miami', 1, true, 'barca', '200', 'lisboa', 8, 10];
 
 // Iteration #3.1 Bonus:
-function sum() {}
-
+function sum(arraySum) {
+  if (arraySum.length === 0) {
+    return 0
+  } else if (arraySum.length === 1) {
+    return arraySum[0]
+  } for (let i = 0; i < arraySum.length; i++) {
+    if (arraySum[i] === 0) {
+      return 0
+    } 
+  }
+  
+}
+sum(mixedArr)
 
 
 // Iteration #4: Calculate the average
@@ -77,9 +89,22 @@ function averageWordLength(strAvg) {
 }
 
 // Bonus - Iteration #4.1
-function avg() {
-  
-  
+function avg(mixedArrCalc) {
+  let sumMix = 0
+  if (mixedArrCalc.length === 0) {
+    return null
+  } for (let i = 0; i < mixedArrCalc.length; i++) {
+    if (typeof mixedArrCalc[i] === "boolean") {
+      if (true) {
+        sumMix++
+      }
+    } else if (typeof mixedArrCalc[i] === "string") {
+      sumMix += mixedArrCalc[i].length
+    } else {
+      sumMix++
+    }
+  }
+  return sumMix / mixedArrCalc.length
 }
 
 // Iteration #5: Unique arrays
